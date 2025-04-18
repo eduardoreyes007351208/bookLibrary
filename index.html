@@ -6,15 +6,32 @@
     <title>Document</title>
     <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <div id="mainDiv">
         <div id="headerDiv">
             <h1>My Library</h1>
-            <button>Add New Book</button>
+            <button id="addButton">Add New Book</button>
+            <h1></h1>
+            <div id="bookFormContainer">
+                <form action="" id="bookForm" class="form">
+                    <label for="title">Title</label>
+                    <input id="title" type="text">
+                    <label for="author">Author</label>
+                    <input id="author" type="text">
+                    <label for="pages">Pages</label>
+                    <input id="pages" type="text">
+                    <label for="read">Have you read?</label>
+                    <input id="read" type="checkbox">
+
+                    <button id="submitButton" type="submit">Add</button>
+                    <button id="closeButton">Close</button>
+                </form>
+            </div>
         </div>
         <div id="libraryDiv">
-            
+
         </div>
     </div>
 </body>
