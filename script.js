@@ -19,6 +19,8 @@ function Book(title, author, pages, read) {
   this.uuid = crypto.randomUUID();
 }
 
+/* Functions */
+/* Displays the book cards  */
 let displayCards = () => {
   bookContainer.innerHTML = myLibrary
     .map(
@@ -34,20 +36,20 @@ let displayCards = () => {
     .join("");
     deleteBook()
 };
-
+/* add books to library */
 let addBook = (title, author, pages, read) => {
   console.log(title, author, pages, read);
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
   console.log(myLibrary);
 };
-
+/* removes book from library */
 let removeBook = (arr, id) => {
     const objIdIndex = arr.findIndex((obj) => obj.id === id);
     arr.splice(objIdIndex, 1);
     return arr;
 }
-
+/* calls removeBook to each delete button pressed */
 let deleteBook = () => {
   const deleteButtons = document.querySelectorAll(".deleteButtons");
   deleteButtons.forEach((button) => {
@@ -57,6 +59,8 @@ let deleteBook = () => {
     });
   });
 };
+
+/* Event Listeners */
 addButton.addEventListener("click", (event) => {
   event.preventDefault();
   bookFormCont.style.visibility = "visible";
@@ -82,5 +86,6 @@ submitButton.addEventListener("click", (event) => {
   displayCards();
 });
 
+/* initializes the page */
 addBook("The Hunger Games", "Suzanne Collins", "374", true);
 displayCards();
