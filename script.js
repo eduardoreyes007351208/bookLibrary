@@ -38,10 +38,8 @@ let displayCards = () => {
 };
 /* add books to library */
 let addBook = (title, author, pages, read) => {
-  console.log(title, author, pages, read);
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
-  console.log(myLibrary);
 };
 /* removes book from library */
 let removeBook = (arr, id) => {
@@ -54,7 +52,7 @@ let deleteBook = () => {
   const deleteButtons = document.querySelectorAll(".deleteButtons");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      console.log(removeBook(myLibrary, button.id));
+      removeBook(myLibrary, button.id);
       displayCards()
     });
   });
