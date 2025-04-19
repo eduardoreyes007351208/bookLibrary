@@ -5,3 +5,7 @@ html {
 #bookForm {
     visibility: hidden;
 }
+
+.bookTitle {
+    background-color: antiquewhite;
+}
