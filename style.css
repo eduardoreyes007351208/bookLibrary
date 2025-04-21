@@ -31,3 +31,13 @@ html {
 .bookTitle {
     background-color: antiquewhite;
 }
+
+#libraryDiv {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fill, 200px)
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(5px);
+}

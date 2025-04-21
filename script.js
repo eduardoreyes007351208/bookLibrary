@@ -9,7 +9,6 @@ const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
 const readInput = document.querySelector("#read");
-
 const dialogForm = document.querySelector("#dialogForm");
 
 
