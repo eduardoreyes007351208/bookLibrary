@@ -45,7 +45,6 @@ let addBook = (title, author, pages, read) => {
 };
 /* removes book from library */
 let removeBook = (arr, id) => {
-  console.log(id, arr)
   const objIdIndex = arr.findIndex((obj) => obj.uuid === id);
   arr.splice(objIdIndex, 1);
   return arr;
