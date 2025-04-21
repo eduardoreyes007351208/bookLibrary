@@ -40,13 +40,14 @@ let displayCards = () => {
         </div>`
     )
     .join("");
-  deleteBook();
+  delete_edit();
 };
 /* add books to library */
 let addBook = (title, author, pages, read) => {
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
 };
+/* edit wether book is read or not */
 let editBook = (arr, id) => {
   const bookIdIndex = arr.findIndex((obj) => obj.uuid === id);
   if(arr[bookIdIndex].read == false) {
@@ -63,13 +64,11 @@ let removeBook = (arr, id) => {
   return arr;
 };
 /* calls removeBook to each delete button pressed */
-let deleteBook = () => {
-  const deleteButtons = document.querySelectorAll(".bookCardButtonsDiv");
-  console.log(deleteButtons)
-  deleteButtons.forEach((button) => {
+let delete_edit = () => {
+  const buttonDiv = document.querySelectorAll(".bookCardButtonsDiv");
+  buttonDiv.forEach((button) => {
     const deleteButton = button.querySelector('.deleteButtons')
     const editButton = button.querySelector('.editButtons')
-    console.log(deleteButton, editButton)
     deleteButton.addEventListener("click", () => {
       removeBook(myLibrary, button.id);
       displayCards();
