@@ -107,4 +107,6 @@ submitButton.addEventListener("click", (event) => {
 
 /* initializes the page */
 addBook("The Hunger Games", "Suzanne Collins", "374", true);
+addBook("Norwegian Wood", "Haruki Murakami", "293", true);
+addBook("Blood Meridian", "Cormac McCarthy", "351", true);
 displayCards();
