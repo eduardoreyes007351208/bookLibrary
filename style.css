@@ -68,7 +68,7 @@ html {
 #libraryDiv {
     padding: 32px;
     display: grid;
-    gap: 16px;
+    gap: 64px;
     grid-template-columns: repeat(auto-fit, 300px);
     place-content: center;
     
