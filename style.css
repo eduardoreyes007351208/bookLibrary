@@ -129,6 +129,12 @@ dialog::backdrop {
     cursor: pointer;
 }
 
+.bookCards .buttons {
+    width: 100px;
+    padding: 8px 0px;
+    font-size: 1.33rem;
+}
+
 dialog {
     border: none;
     border-radius: 10px;
