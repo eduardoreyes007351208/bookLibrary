@@ -148,6 +148,10 @@ dialog::backdrop {
     padding: 8px 0px;
     font-size: 1.33rem;
 }
+.bookCardButtonsDiv {
+    display: flex;
+    gap: 8px;
+}
 .bookTitle {
     font-size: 1.66rem;
     font-style: italic;
