@@ -150,7 +150,9 @@ dialog::backdrop {
 }
 .bookCardButtonsDiv {
     display: flex;
-    gap: 8px;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 8px;
 }
 .bookTitle {
     font-size: 1.66rem;
