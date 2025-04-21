@@ -10,6 +10,9 @@ const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
 const readInput = document.querySelector("#read");
 
+const dialogForm = document.querySelector("#dialogForm");
+
+
 /* initialize the book constructor */
 function Book(title, author, pages, read) {
   this.title = title;
@@ -34,7 +37,7 @@ let displayCards = () => {
         </div>`
     )
     .join("");
-    deleteBook()
+  deleteBook();
 };
 /* add books to library */
 let addBook = (title, author, pages, read) => {
@@ -43,29 +46,52 @@ let addBook = (title, author, pages, read) => {
 };
 /* removes book from library */
 let removeBook = (arr, id) => {
-    const objIdIndex = arr.findIndex((obj) => obj.id === id);
-    arr.splice(objIdIndex, 1);
-    return arr;
-}
+  const objIdIndex = arr.findIndex((obj) => obj.id === id);
+  arr.splice(objIdIndex, 1);
+  return arr;
+};
 /* calls removeBook to each delete button pressed */
 let deleteBook = () => {
   const deleteButtons = document.querySelectorAll(".deleteButtons");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", () => {
       removeBook(myLibrary, button.id);
-      displayCards()
+      displayCards();
     });
   });
 };
 
 /* Event Listeners */
-addButton.addEventListener("click", (event) => {
+/* addButton.addEventListener("click", (event) => {
   event.preventDefault();
   bookFormCont.style.visibility = "visible";
 });
 closeButton.addEventListener("click", (event) => {
   event.preventDefault();
   bookFormCont.style.visibility = "hidden";
+}); */
+/* submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  let bTitle = titleInput.value;
+  let bAuthor = authorInput.value;
+  let bPages = pagesInput.value;
+  let bRead = readInput.checked;
+  addBook(bTitle, bAuthor, bPages, bRead); */
+  /* input reset */
+  /* titleInput.value = "";
+  authorInput.value = "";
+  pagesInput.value = "";
+  readInput.checked = false; */
+  /* make hidden */
+  /* bookFormCont.style.visibility = "hidden";
+  displayCards();
+}); */
+addButton.addEventListener("click", () => {
+  dialogForm.showModal();
+});
+closeButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  dialogForm.close();
 });
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -80,8 +106,8 @@ submitButton.addEventListener("click", (event) => {
   pagesInput.value = "";
   readInput.checked = false;
   /* make hidden */
-  bookFormCont.style.visibility = "hidden";
   displayCards();
+  dialogForm.close()
 });
 
 /* initializes the page */
