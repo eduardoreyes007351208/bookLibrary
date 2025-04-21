@@ -47,6 +47,15 @@ let addBook = (title, author, pages, read) => {
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
 };
+let editBook = (arr, id) => {
+  const bookIdIndex = arr.findIndex((obj) => obj.uuid === id);
+  if(arr[bookIdIndex].read == false) {
+    arr[bookIdIndex].read = true;
+  } else {
+    arr[bookIdIndex].read = false;
+  }
+  return arr;
+}
 /* removes book from library */
 let removeBook = (arr, id) => {
   const objIdIndex = arr.findIndex((obj) => obj.uuid === id);
@@ -66,7 +75,8 @@ let deleteBook = () => {
       displayCards();
     });
     editButton.addEventListener('click', (event) => {
-
+      editBook(myLibrary, button.id);
+      displayCards();
     })
   });
 };
