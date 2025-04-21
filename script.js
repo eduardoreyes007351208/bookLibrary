@@ -29,9 +29,9 @@ let displayCards = () => {
       (book) =>
         `<div class='bookCards'>
             <h4 class='bookTitle'>Title: ${book.title}</h4>
-            <h4>Author: ${book.author}</h4>
-            <h4>Pages: ${book.pages}</h4>
-            <h4>Read: ${book.read}</h4>
+            <h4 class='bookAuthor'>Author: ${book.author}</h4>
+            <h4 class='bookPages'>Pages: ${book.pages}</h4>
+            <h4 class='bookRead'>Read: ${book.read}</h4>
             <button id='${book.uuid}' class='deleteButtons buttons'>Delete</button>
         </div>`
     )
