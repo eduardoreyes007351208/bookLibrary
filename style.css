@@ -1,5 +1,19 @@
+@font-face {
+    font-family: futuraFont;
+    src: url('./fonts/futuramediumbt.ttf');
+}
+
+:root {
+    --primary-color: #84d2f6;
+    --secondary-color: #F6A884;
+    --neutral-color: #E1E6EE;
+
+    font-size: 12px;
+    font-family: futuraFont;
+}
+
 html {
-    background-color: #444444;
+    background-color: var(--neutral-color);
 }
 
 #mainDiv {
@@ -14,6 +28,13 @@ html {
     flex-direction: column;
     justify-content: space-between;
     padding: 32px 16px;
+    background-color: var(--primary-color);
+    box-shadow: 0px 4px 6px #444444;
+}
+#headerDiv h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 4px 6px 5px #444444;
 }
 #topHeader {
     height: 100px;
@@ -22,7 +43,23 @@ html {
     align-items: center;
     margin-bottom: 32px;
 }
-
+.buttons {
+    width: 150px;
+    padding: 16px 0px;
+    font-size: 1.5rem;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 6px 5px #444444;
+    color: #ffffff;
+    transition: .5s;
+}
+.buttons:hover {
+    background-color: var(--neutral-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: .5s;
+}
 
 #bookForm {
     visibility: hidden;
