@@ -32,7 +32,11 @@ let displayCards = () => {
             <h4 class='bookAuthor'>Author: ${book.author}</h4>
             <h4 class='bookPages'>Pages: ${book.pages}</h4>
             <h4 class='bookRead'>Read: ${book.read}</h4>
-            <button id='${book.uuid}' class='deleteButtons buttons'>Delete</button>
+            <div id='${book.uuid}' class='bookCardButtonsDiv'>
+              <button class='deleteButtons buttons'>Delete</button>
+              <button class='editButtons buttons'>Edit Read</button>
+            </div>
+            
         </div>`
     )
     .join("");
@@ -51,12 +55,19 @@ let removeBook = (arr, id) => {
 };
 /* calls removeBook to each delete button pressed */
 let deleteBook = () => {
-  const deleteButtons = document.querySelectorAll(".deleteButtons");
+  const deleteButtons = document.querySelectorAll(".bookCardButtonsDiv");
+  console.log(deleteButtons)
   deleteButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    const deleteButton = button.querySelector('.deleteButtons')
+    const editButton = button.querySelector('.editButtons')
+    console.log(deleteButton, editButton)
+    deleteButton.addEventListener("click", () => {
       removeBook(myLibrary, button.id);
       displayCards();
     });
+    editButton.addEventListener('click', (event) => {
+
+    })
   });
 };
 
