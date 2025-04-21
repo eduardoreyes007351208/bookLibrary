@@ -72,8 +72,10 @@ html {
 #libraryDiv {
     padding: 32px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(auto-fill, 200px)
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, 300px);
+    place-content: center;
+    
 }
 
 dialog::backdrop {
@@ -81,7 +83,7 @@ dialog::backdrop {
 }
 
 #dialogForm {
-    width: 50vw;
+    width: min(50vw, 460px);
 }
 #newbookForm {
     display: flex;
