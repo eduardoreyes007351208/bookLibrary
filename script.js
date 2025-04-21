@@ -61,30 +61,6 @@ let deleteBook = () => {
 };
 
 /* Event Listeners */
-/* addButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  bookFormCont.style.visibility = "visible";
-});
-closeButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  bookFormCont.style.visibility = "hidden";
-}); */
-/* submitButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  let bTitle = titleInput.value;
-  let bAuthor = authorInput.value;
-  let bPages = pagesInput.value;
-  let bRead = readInput.checked;
-  addBook(bTitle, bAuthor, bPages, bRead); */
-  /* input reset */
-  /* titleInput.value = "";
-  authorInput.value = "";
-  pagesInput.value = "";
-  readInput.checked = false; */
-  /* make hidden */
-  /* bookFormCont.style.visibility = "hidden";
-  displayCards();
-}); */
 addButton.addEventListener("click", () => {
   dialogForm.showModal();
 });
